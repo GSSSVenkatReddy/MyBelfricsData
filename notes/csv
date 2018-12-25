@@ -1,0 +1,3 @@
+ sqlite> create table test (id integer, datatype_id integer, level integer, meaning text);
+  sqlite> .separator ","
+  sqlite> .import no_yes.csv test

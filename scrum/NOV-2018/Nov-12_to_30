@@ -1,0 +1,78 @@
+1.Completed verify and show wallet UI with response using javascript and API's.
+
+API's used :-
+
+POST call : http://54.251.138.1:9305/api/dapps/8d2ad02c847eb9aaab012bb27e8f681639e93291f837596f40458f2cecedb591/verifypayslip/
+
+inputs : JSON data of payslip
+
+response :-
+true case : success
+error case : Hash not found
+
+POST call : http://node1.belrium.io/api/accounts/open
+
+inputs : secret and country code
+
+Based on response  we are redirecting to Wallet2 page where user can see thier wallet details.
+
+
+2.Successfully transferred the data from merchant show wallet page to wallet page using encoded and decoded  URI component concept.
+
+
+3.Created MailWalletTemplate for payroll dapp where employee and verifier can verify the payslip from this template itself.
+  The payslip json data is now automatically placed into textbox which is in verify page.
+  *automatically means based on the verify button action.
+
+
+4.Created RegisterEmployee Template which send as email to employee who is registered by employer in payroll dapp.
+
+
+5.Wrote nodejs code for sending email templates through backend with the help of John Bonda.
+  Used nodemailer module and handlebars view engine for sending templates. 
+
+
+6.Worked on dashboard page and integrated payroll issued or not API in frontend using javascript.
+
+API used :-
+
+POST call : http://54.251.138.1:9305/api/dapps/8d2ad02c847eb9aaab012bb27e8f681639e93291f837596f40458f2cecedb591/payslip/issuedOrNot/
+
+inputs: employee id , month and year of payslip issued.
+
+response:-
+true case : If details existed in the DB then based on the response we are showing alert as "payslip issued" for now...
+error case : else we are showing alert as "payslip not issued" for now...
+
+
+7.Had a KT with @Priyanka Sawant over Angular.But currently working on writing javascripts for our payroll dapp as per the instructions given by
+@priyanka Sawant.She told that after successful demo you can start working on angular.
+
+
+8.Worked on KYC verification status and accounts open API's.
+
+  Flow :
+
+  If kyc status is true , employer is redirected to wallet page where we check whether he got more than 50 bel or not.
+  If bel > 50 page redirected to dapp register page, else redirected to wallet recharge page.
+  If kyc status is false, employer is redirected to upload documents page.
+
+  API used :-
+  GET call : http://54.254.190.96:8080/api/v1/user/countries/kyc
+
+  inputs : belrium token which is gernerated at sign-up.
+
+
+9.Currently working on super admin dashboard and authorizers dashboard.
+  
+  Flow:
+
+  Super admin can register issuers and authorizers for issuing and authorising the payslip/certificate.
+
+  Authorizers are going to sign the issued certificates.After signing only the mail sent to user for viewing their certificates.
+
+  API using :-
+  Transaction call :
+  PUT call : http://54.251.138.1:9305/api/dapps/89afe1e340e2d39cc0e1fe6825fdb99c394bdbfee6afb3fc7ed4815506e47b2f/transactions/unsigned
+
+  inputs : Issuers / authorizers registration data , type , fee , secret and sender's public-key.

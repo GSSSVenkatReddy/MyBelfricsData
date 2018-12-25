@@ -1,0 +1,14 @@
+CREATE TABLE `employers`(`id` int(20) NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `orgName` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `password` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+
+
+CREATE TABLE `employees`(`eid` int(20) NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `orgName` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `password` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, PRIMARY KEY (`eid`)) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
+
+
+
+CREATE TABLE `pay`(`eid` int(20) NOT NULL, `name` varchar(255) NOT NULL,`orgName` varchar(255) NOT NULL, `email` varchar(255) NOT NULL, `salary` varchar(255) NOT NULL, `month` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) DEFAULT CHARSET=latin1;
+
+
+
